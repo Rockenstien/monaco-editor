@@ -78,9 +78,14 @@ export const languages = {
         aliases: ['Scala']
     },
     javascript: {
-        id: 'javascript',
+        id: 'js',
         extensions: ['.js'],
         aliases: ['Javascript']
+    },
+    typescript: {
+        id: 'ts',
+        extensions: ['.ts'],
+        aliases: ['Typescript']
     }
 }
 
@@ -93,5 +98,5 @@ export const MonacoConfig: NgxMonacoEditorConfig = {
 export function monacoOnLoad() {
     // here monaco object will be available as window.monaco use this function to extend monaco editor functionalities.
     console.log((<any>window).monaco);
-
+    // monaco.languages.register(languages.json);
 }

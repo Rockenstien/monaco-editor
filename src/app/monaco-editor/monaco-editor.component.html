@@ -1,1 +1,15 @@
-<ngx-monaco-editor class="monaco-editor" [options]="editorOptions" [(ngModel)]="code" (onInit)="monacoOnInit($event)"></ngx-monaco-editor>
+<!-- <ngx-monaco-editor class="monaco-editor" [options]="editorOptions" [(ngModel)]="code" (onInit)="monacoOnInit($event)">
+</ngx-monaco-editor> -->
+
+
+<div #container ktMonacoRisize (constainerResized)="onResized($event)" class="editor-wrapper">
+    <div class='overlay-loader' *ngIf="loading">
+        <div class="h-100-p d-flex justify-content-between align-items-center">
+            {{ loadingMsg }}
+        </div>
+    </div>
+    <div class="wrapper" [ngClass]="{'d-none':loading}">
+        <div #editor class="monaco-editor" [style.width.px]="container.offsetWidth"
+            [style.height.px]="container.offsetHeight" style="min-width: 0;"></div>
+    </div>
+</div>
