@@ -6,6 +6,7 @@ export const languages = {
         extensions: ['.json', '.bowerrc', '.jshintrc', '.jscsrc', '.eslintrc', '.babelrc'],
         aliases: ['JSON', 'json'],
         mimetypes: ['application/json'],
+        isServerNeeded: false
     },
     java: {
         id: 'java',
@@ -78,16 +79,18 @@ export const languages = {
         aliases: ['Scala']
     },
     javascript: {
-        id: 'js',
+        id: 'javascript',
         extensions: ['.js'],
-        aliases: ['Javascript']
+        aliases: ['Javascript'],
+        isServerNeeded: false
     },
     typescript: {
-        id: 'ts',
+        id: 'typescript',
         extensions: ['.ts'],
-        aliases: ['Typescript']
+        aliases: ['Typescript'],
+        isServerNeeded: false
     }
-}
+};
 
 export const MonacoConfig: NgxMonacoEditorConfig = {
     baseUrl: 'assets', // configure base path for monaco editor

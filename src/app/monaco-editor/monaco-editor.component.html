@@ -13,3 +13,11 @@
             [style.height.px]="container.offsetHeight" style="min-width: 0;"></div>
     </div>
 </div>
+
+<div class="language-selector">
+    <select [(ngModel)]="changeLanguageId" class="form-select" (change)="changeLanguage()" name="" id="">
+        <option *ngFor="let language of languages | keyvalue">{{ language.key }}</option>
+    </select>
+    <p *ngIf="autoCompleteStatus">Autocomplete Started</p>
+    <p *ngIf="!autoCompleteStatus">Autocomplete Checking</p>
+</div>
